@@ -3,6 +3,10 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+    <context-param>
+        <param-name>javax.faces.CONFIG_FILES</param-name>
+        <param-value>/META-INF/Context.xml</param-value>
+    </context-param>
     <welcome-file-list>
         <welcome-file>index.html</welcome-file>
     </welcome-file-list>
@@ -11,6 +15,9 @@
     </session-config>
     <listener>
         <listener-class>xyz.intellij.listener.MyHttpRequestListener</listener-class>
+    </listener>
+    <listener>
+        <listener-class>xyz.intellij.listener.MyHttpRequestAttributeListener</listener-class>
     </listener>
     <servlet>
         <servlet-name>servlet1</servlet-name>
@@ -118,8 +125,17 @@
         <servlet-name>clearCart</servlet-name>
         <servlet-class>xyz.intellij.session.ClearCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
     <servlet-mapping>
         <servlet-name>clearCart</servlet-name>
         <url-pattern>/book/clear</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 </web-app>

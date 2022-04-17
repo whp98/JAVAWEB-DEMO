@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<Context>
+    <!--钝化时间设置-->
+    <Manger className="org.apache.catalina.session.PersistentManager" maxIdleSwap="1">
+        <!--存储的目录-->
+        <Store className="org.apache.catalina.session.FileStore" directory="whp"/>
+    </Manger>
+</Context>
