@@ -144,6 +144,15 @@
         <servlet-name>clearCart</servlet-name>
         <servlet-class>xyz.intellij.session.ClearCart</servlet-class>
     </servlet>
+    <!--文件上传-->
+    <servlet>
+        <servlet-name>fileUpload</servlet-name>
+        <servlet-class>xyz.intellij.fileupload.FileUpload</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>fileUpload</servlet-name>
+        <url-pattern>/fileUpload</url-pattern>
+    </servlet-mapping>
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
         <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
